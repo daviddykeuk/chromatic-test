@@ -1,19 +1,13 @@
 import React from "react";
 import { createStyles, withStyles, WithStyles } from "@material-ui/core/styles";
 
+import { Button as MaterialButton } from "@material-ui/core";
+
 export interface ButtonProps extends WithStyles<typeof styles> {
   /**
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: "small" | "medium" | "large";
   /**
    * Button contents
    */
@@ -24,32 +18,40 @@ export interface ButtonProps extends WithStyles<typeof styles> {
   onClick?: () => void;
 }
 
-const styles = () => createStyles({});
+const styles = () =>
+  createStyles({
+    linkButton: {
+      fontFamily: "ModernEraBold",
+      textAlign: "center",
+      paddingTop: 10,
+      paddingLeft: 20,
+      paddingRight: 20,
+      paddingBottom: 10,
+      color: "#FFFFFF",
+      fontSize: "21px",
+      textTransform: "none",
+      boxShadow: "none",
+    },
+  });
 
 /**
  * Primary UI component for user interaction
  */
-const ButtonComp: React.FC<ButtonProps> = ({
+export const ButtonComp: React.FC<ButtonProps> = ({
   primary = false,
-  size = "medium",
-  backgroundColor,
   label,
+  classes,
   ...props
 }) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
   return (
-    <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={{ backgroundColor }}
+    <MaterialButton
+      variant="contained"
+      color={primary ? "primary" : "secondary"}
+      className={classes.linkButton}
       {...props}
     >
       {label}
-    </button>
+    </MaterialButton>
   );
 };
 

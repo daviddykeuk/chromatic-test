@@ -30,19 +30,20 @@ const styles = ({ palette, spacing }: Theme) =>
       borderWidth: 1,
       borderColor: palette.grey[300],
       borderStyle: "solid",
-      minHeight: 132,
+      minHeight: 110,
     },
     title: {
-      marginTop: 15,
-      marginBottom: 15,
-      lineHeight: "18px",
+      paddingTop: 12,
+      paddingBottom: 15,
+      lineHeight: 1,
     },
     value: {
       color: palette.primary.main,
       fontWeight: 800,
       fontSize: "52px",
       fontFamily: "ModernEraBold",
-      marginBottom: 5,
+      lineHeight: 1,
+      marginBottom: 0,
     },
   });
 
