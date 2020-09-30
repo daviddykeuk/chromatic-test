@@ -30,7 +30,7 @@ const styles = ({ palette, spacing }: Theme) =>
       borderWidth: 1,
       borderColor: palette.grey[300],
       borderStyle: "solid",
-      minHeight: 110,
+      minHeight: 100,
     },
     title: {
       paddingTop: 12,
